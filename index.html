@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javier Bonilla - Sitio Web</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header y Navegación -->
+    <header>
+      <nav>
+        <div class="logo">JB</div>
+        <div class="nav-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre Mí</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#documentos">Documentos</a>
+          <a href="#galeria">Galería</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section Mejorada -->
+    <section id="inicio" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Juan Javier Bonilla Maldonado</h1>
+          <h2>Técnico en Sistemas de Computación</h2>
+          <p>
+            Técnico en Sistemas de Computación especializado en desarrollo de
+            software, soporte técnico y soluciones tecnológicas innovadoras.
+          </p>
+          <div class="cta-buttons">
+            <a href="#contacto" class="cta-button">Contáctame</a>
+            <a href="#documentos" class="cta-button secondary"
+              >Ver Documentos</a
+            >
+          </div>
+        </div>
+        <!-- Image Stack Carousel en lugar de una sola imagen -->
+        <div class="hero-stack-carousel">
+          <div class="hero-stack-container">
+            <div class="hero-stack-item active" data-index="0">
+              <img src="img/javier.jpeg" alt="Juan Javier Bonilla" />
+            </div>
+            <div class="hero-stack-item" data-index="1">
+              <img src="img/javier_3.jpeg" alt="Soporte Técnico" />
+            </div>
+            <div class="hero-stack-item" data-index="2">
+              <img src="img/javier_2.jpeg" alt="Desarrollo Web" />
+            </div>
+            <div class="hero-stack-item" data-index="3">
+              <img src="img/javier_1.jpeg" alt="Bases de Datos" />
+            </div>
+            <div class="hero-stack-item" data-index="4">
+              <img src="img/javier_4.jpeg" alt="Enseñanza" />
+            </div>
+          </div>
+
+          <!-- Indicadores minimalistas -->
+          <div class="hero-indicators">
+            <span class="hero-indicator active" data-index="0"></span>
+            <span class="hero-indicator" data-index="1"></span>
+            <span class="hero-indicator" data-index="2"></span>
+            <span class="hero-indicator" data-index="3"></span>
+            <span class="hero-indicator" data-index="4"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal para Galería (SOLO UNO) -->
+    <div id="imageModal" class="modal">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi">
+      <h2 class="section-title">Sobre Mí</h2>
+      <div class="about-content">
+        <div class="vision-mission">
+          <div
+            class="vision"
+            style="
+              background: rgba(47, 54, 64, 0.8);
+              padding: 2rem;
+              border-radius: 10px;
+              margin-bottom: 2rem;
+            "
+          >
+            <h3 style="color: var(--accent); margin-bottom: 1rem">👁️ Visión</h3>
+            <p>
+              Como Técnico en Sistemas de Computación y Desarrollador, mi
+              objetivo es integrar soluciones tecnológicas robustas - desde el
+              mantenimiento de infraestructura hasta el desarrollo de software -
+              para optimizar procesos y garantizar experiencias digitales
+              eficientes.
+            </p>
+          </div>
+          <div
+            class="mission"
+            style="
+              background: rgba(47, 54, 64, 0.8);
+              padding: 2rem;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: var(--accent); margin-bottom: 1rem">🎯 Misión</h3>
+            <ul style="list-style: none">
+              <li
+                style="
+                  padding: 0.5rem 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                ✅ Brindar soporte técnico integral
+              </li>
+              <li
+                style="
+                  padding: 0.5rem 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                ✅ Desarrollar software a medida
+              </li>
+              <li
+                style="
+                  padding: 0.5rem 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                ✅ Optimizar infraestructuras TI
+              </li>
+              <li
+                style="
+                  padding: 0.5rem 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                ✅ Mantenerme actualizado en tecnologías
+              </li>
+              <li
+                style="
+                  padding: 0.5rem 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                ✅ Colaborar multidisciplinariamente
+              </li>
+              <li style="padding: 0.5rem 0">
+                ✅ Educar y asesorar en buenas prácticas
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Documentos -->
+    <section id="documentos" class="documents-section">
+      <h2 class="section-title">Documentos</h2>
+      <div class="documents-grid">
+        <div class="document-card">
+          <div class="document-icon">📄</div>
+          <h3>CV Actualizado</h3>
+          <p>Descarga mi currículum vitae en formato PDF</p>
+          <div
+            style="
+              position: relative;
+              padding-top: max(60%, 324px);
+              width: 100%;
+              height: 0;
+            "
+          >
+            <iframe
+              style="
+                position: absolute;
+                border: none;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+              "
+              src="https://online.fliphtml5.com/TecnoJavier/tinm/"
+              seamless="seamless"
+              scrolling="no"
+              frameborder="0"
+              allowtransparency="true"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+        </div>
+        <div class="document-card">
+          <div class="document-icon">🎓</div>
+          <h3>Título Universitario</h3>
+          <p>Técnico en Sistemas de Computación</p>
+          <img src="img/titulo_universitario.jpeg" class="img-title" download />
+        </div>
+        <div class="document-card">
+          <div class="document-icon">🤖</div>
+          <h3>Certificación en Robótica</h3>
+          <p>Especialización en Robótica Aplicada con Arduino</p>
+          <img src="img/robótica.jpeg" class="img-title" download />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería Estilo Revista Digital -->
+    <section id="galeria" class="gallery-section">
+      <h2 class="section-title">Adds</h2>
+      <div class="magazine-gallery">
+        <div class="magazine-item" onclick="openModal(0)">
+          <img src="img/fullstack.jpg" alt="Proyecto 1" class="magazine-image" />
+          <div class="magazine-caption">
+            <h3>Desarrollo FullStack</h3>
+            <p>Sistema de Facturación Electrónica</p>
+          </div>
+        </div>
+        <div class="magazine-item" onclick="openModal(1)">
+          <img
+            src="img/support.jpg"
+            alt="Proyecto 2"
+            class="magazine-image"
+          />
+          <div class="magazine-caption">
+            <h3>Soporte Técnico</h3>
+            <p>2M Group & Dollar City</p>
+          </div>
+        </div>
+        <div class="magazine-item" onclick="openModal(2)">
+          <img
+            src="img/web-developer.jpg"
+            alt="Proyecto 3"
+            class="magazine-image"
+          />
+          <div class="magazine-caption">
+            <h3>Desarrollo Web</h3>
+            <p>Gestión de Cobros de Agua</p>
+          </div>
+        </div>
+        <div class="magazine-item" onclick="openModal(3)">
+          <img
+            src="img/database.jpg"
+            alt="Proyecto 4"
+            class="magazine-image"
+          />
+          <div class="magazine-caption">
+            <h3>Bases de Datos</h3>
+            <p>SQL y MySQL Development</p>
+          </div>
+        </div>
+        <div class="magazine-item" onclick="openModal(4)">
+          <img
+            src="img/teacher.jpg"
+            alt="Proyecto 5"
+            class="magazine-image"
+          />
+          <div class="magazine-caption">
+            <h3>Enseñanza</h3>
+            <p>Instructor de Programación</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia">
+      <h2 class="section-title">Experiencia Profesional</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2024 - Actualidad</div>
+            <h3>Técnico de Información y Tecnología</h3>
+            <h4>Universidad Salvadoreña Alberto Masferrer</h4>
+            <p>
+              Gestión de sistemas informáticos y soporte técnico especializado.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Ene 2024 - Feb 2025</div>
+            <h3>Desarrollador FullStack</h3>
+            <h4>Sistema de Facturación Electrónica</h4>
+            <p>
+              Desarrollo de aplicación web multiplataforma para facturación
+              electrónica aprobada por el CNR.
+            </p>
+            <ul>
+              <li>PHP, MySQL, JavaScript, Bootstrap</li>
+              <li>Arquitectura MVC</li>
+              <li>Integración con APIs REST</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Ago 2024 - Nov 2024</div>
+            <h3>Support On Site</h3>
+            <h4>2M Group & Dollar City</h4>
+            <p>
+              Soporte técnico presencial para tiendas y oficinas corporativas.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Julio 2022 - Noviembre 2022</div>
+            <h3>Tutor de Informática</h3>
+            <h4>Complejo Educativo Cantón Las Isletas</h4>
+            <p>
+              Suplanté al profesor titular de la materia de informática debido a
+              su incapacidad, gestionando los datos académicos y las notas de
+              los alumnos. Modificando el plan de estudio e impartiendo un curso
+              básico de diseño web.
+            </p>
+            <ul>
+              <li>Lógica de Desarrollo</li>
+              <li>Desarrollo con HTML5</li>
+              <li>Diseño con CSS</li>
+              <li>Interacción con JavaScript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <h2 class="section-title">Habilidades & Competencias</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>💻 Desarrollo Web</h3>
+          <ul class="skill-list">
+            <li>PHP & Laravel</li>
+            <li>HTML5, CSS3, JavaScript</li>
+            <li>Bootstrap, jQuery</li>
+            <li>Ajax, XML, JSON</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>🗄️ Bases de Datos</h3>
+          <ul class="skill-list">
+            <li>MySQL</li>
+            <li>SQL Server</li>
+            <li>MariaDB</li>
+            <li>Diseño de Esquemas</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>🔧 Soporte Técnico</h3>
+          <ul class="skill-list">
+            <li>Mantenimiento Hardware/Software</li>
+            <li>Redes y Conectividad</li>
+            <li>Sistemas CCTV</li>
+            <li>Soporte On-Site</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>🌐 Otras Tecnologías</h3>
+          <ul class="skill-list">
+            <li>Java, C#, Python</li>
+            <li>Git & GitHub</li>
+            <li>DigitalOcean</li>
+            <li>Office 365</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>bonillajuan244@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📱</span>
+            <div>
+              <strong>Teléfono</strong>
+              <p>+503 7601 3497</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>🎂</span>
+            <div>
+              <strong>Fecha de Nacimiento</strong>
+              <p>26 de noviembre de 2002</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://github.com/tecnojavier"
+              class="social-link"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/juan-javier-bonilla-maldonado-344519243"
+              class="social-link"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Juan Javier Bonilla Maldonado. Todos los derechos
+        reservados.
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
