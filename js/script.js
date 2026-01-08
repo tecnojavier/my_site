@@ -51,7 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Animación al hacer scroll - OPTIMIZADO
+// Animación al hacer scroll
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -68,7 +68,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar elementos para animación
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll(".timeline-item, .skill-category, .contact-item, .magazine-item, .document-card").forEach((el) => {
+  document.querySelectorAll(".timeline-item, .skill-category, .contact-item, .magazine-item, .document-card, .portfolio-card").forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(20px)";
     el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Efecto de partículas - MEJORADO
+// Efecto de partículas
 function createParticle() {
   const particle = document.createElement("div");
   particle.style.cssText = `
@@ -160,8 +160,6 @@ class HeroStackCarousel {
       if (e.key === 'ArrowRight') this.next();
     });
     
-    // Auto-rotación opcional (descomenta si la quieres)
-    // this.startAutoRotation();
   }
   
   updateCarousel() {
@@ -213,13 +211,23 @@ class HeroStackCarousel {
   startAutoRotation() {
     setInterval(() => {
       this.next();
-    }, 5000); // Cambia cada 5 segundos
+    }, 5000); // cada 5 segundos
   }
+}
+
+// Función para cargar proyectos dinámicamente 
+function loadPortfolioProjects() {
+
+  console.log('Portafolio cargado correctamente');
 }
 
 // Inicializar el hero carousel cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+  // Inicializar carousel
   new HeroStackCarousel();
+  
+  // Inicializar portafolio 
+  loadPortfolioProjects();
   
   // Crear algunas partículas de fondo
   for (let i = 0; i < 20; i++) {
@@ -232,4 +240,49 @@ document.addEventListener('DOMContentLoaded', function() {
       createParticle();
     }
   }, 1000);
+  
+  // Asegurar que el modal se cierre correctamente
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+      closeModal();
+    }
+  });
 });
+
+// Función para filtrar proyectos por categoría
+function filterProjects(category) {
+  const cards = document.querySelectorAll('.portfolio-card');
+  
+  cards.forEach(card => {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.style.display = 'block';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100);
+    } else {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        card.style.display = 'none';
+      }, 300);
+    }
+  });
+}
+
+// Función para validar formularios (en el futuro)
+function validateForm(form) {
+  const inputs = form.querySelectorAll('input[required], textarea[required]');
+  let isValid = true;
+  
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.style.borderColor = '#ff4757';
+      isValid = false;
+    } else {
+      input.style.borderColor = '#00a8ff';
+    }
+  });
+  
+  return isValid;
+}
